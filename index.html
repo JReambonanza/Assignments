@@ -1,109 +1,95 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style>
-        body {
-            background-color: rgb(248, 244, 244);
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 28px;
-            margin: 5px;
-            padding: 5px;
-        }
-        header{
-        top:0;
-        bottom:0;
-        width: 100%;
-        color: red;
-    }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form Validation with jQuery</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+    <!-- Add Bootstrap JS and jQuery script links here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- jQuery for Custom Validation -->
+    <script>
+        $(document).ready(function () {
+            
+            var form = document.getElementById('registrationForm')
 
-        .wrapAll{
-            border: 2px solid black;
-            padding: 25px;
-        }
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
 
-
-    img { 
-        max-width: 100%; 
-        height: auto;
-        display: block;
-    }
-    @media only screen and (max-width: 480px) {
-      img {
-        width: 100%;
-      }
-    }
-
-    footer{
-        font-size: 13px;
-    }
-    footer, h2{
-        text-align: center;
-    }
-    a{
-        text-decoration: none;
-    }
-
-    h3{
-        color: darkred;
-        font-family: Georgia, 'Times New Roman', Times, serif
-    }
-
-        </style>
-        
-    </head>
-    <body>
-        <div class="wrapAll">
-            <header><h2>Alfred Fabro - Reambonanza</h2>
-                    <img src="https://github.com/JReambonanza/htmlcss_assignment/blob/main/alfredimage.JPG?raw=true" />
-            </header>
-            <br/>
-            <div id="About">
-                <h3>Early life</h3>
-                <p>Alfred was born on August 2, 1985, in Toledo City, Cebu, Philippines. He is the fifth of seven children of Filipino parents Alberto Odtojan Reambonanza and Aida Fabro Reambonanza. His family and friends call him "Augie" (O-gi). The nickname was from his birth month, August. Like any other normal kid, he is active outdoors despite his seasonal asthma. He went to La Salle Don Andres Soriano during his elementary years. He finished his secondary education at Don Andres Soriano National High School in 2003. Alfred did not grow up to be privileged. Among his siblings, he is the only one who graduated from a public school during his secondary education due to the financial crisis his family experienced. Alfred then went to a public college to finish his Associate's degree in Aircraft Maintenance. He may be unlucky financially, but he is very fortunate regarding his friends. Alfred enjoys the outdoors and loves spending time with his long-time friends from high school. He loves trekking for long hours to the mountains and camping overnight, rock climbing, swimming, fishing, playing basketball, karaoke, singing, and playing guitar. Until now, they would get together once in a while.</p>
+                form.classList.add('was-validated')
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Registration Form</h2>
+        <form id="registrationForm" class="needs-validation" novalidate>
+            <!-- Name Input -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
             </div>
-            <br/>
-            <div id="EduEmployment">
-                <h3>Education and Employment</h3>
-                <ul>
-                    <li><b>March </b>: Graduated his elementary</li>
-                    <li><b>March </b>: Graduated high school</li>
-                    <li><b>March 2006</b>: Finished Associates Degreee for Aircraft Maintenance Technology at Philippine State College of Aeronautics</li>
-                    <li><b>July 24, 2006 - August 31, 2008</b>: Started working as a Market Researcher at WesternWats Philippines</li>
-                    <li><b>Septermber 1, 2008 - January 2, 2011</b>: Promoted to Supervisor at Westernwats Philippines </li>
-                    <li><b>January 3, 2011 - April 30, 2022</b>: Worked as a Project Manager for the same company but the company name was change to Dynata</li>
-                    <li><b>October 27, 2022 - June 23, 2003</b>: Lead Configuration Specialist at MyOutDesk Virtual Assistants</li>
-                </ul>
-            </div>
-            <br/>
-            <div>
-                <h3>Awards and Recognition</h3>
-                <ul>
-                    <li><b>2010 and 2012</b> - Project Manager of the year</li>
-                    <li><b>May 2013</b> - Global NA_CATI Best Project Manager</li>
-                    <li><b>February 2015</b> - Benchmark of Success Awardee</li>
-                    <li><b>2015</b> - Quarter 1 Outstanding Project Manager Awardee</li>
-                    <li><b>May 2015</b> - Encore Awardee as Outstanding Project Employee</li>
-                    <li><b>May 2016</b> - Project Manager of the month for Offline team</li>
-                    <li><b>July 2017</b> - Project Manager for the month for Offline NA team</li>
-                    <li><b>October 2017</b> - Project Manager for the month for Offline NA team</li>
-                    <li><b>February 2018</b> - Project Manager for the month for Offline NA team</li>
-                    <li><b>January 2019</b> - Project Manager for the month for Offline NA team</li>
 
-                </ul>
-            </div>
-        <br/>
-
-            <footer>
-                <p>Connect with Alfred through his socials
-                <a href="https://www.linkedin.com/in/alfred-reambonanza-601b07154/" target="_blank">Linkedin</a>
-                <a href="https://www.facebook.com/alfred.reambonanza.92" target="_blank">Facebook</a>
-                </p>
-                <div id="copyright">
-                    © 2023 JA.Reambonanza. All Rights Reserved.</div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="province">Province:</label>
+                        <select class="form-control" id="province" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                    </div>
                 </div>
-            </footer>
-    </div>
-    </body>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <input type="text" class="form-control" id="city" name="city" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" minlength="8" required>
+                <div class="invalid-feedback">
+                    Password must be at least 8 char long.
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to <a href="#">Terms and conditions</a>
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+
+            <br>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>    
+</body>
 </html>
