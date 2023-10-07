@@ -1,0 +1,330 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment2</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+        <script>
+            $(document).ready(function () {
+                
+                var form = document.getElementById('registrationForm')
+
+                form.addEventListener('submit', function (event) {
+                    var postalval = document.getElementById("postal").value;
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated');
+                    
+                })
+            });
+
+        </script>
+
+        <style>
+            #headerForm{
+                text-align: center;
+                padding-top: 20px;
+            }
+
+            .fa {
+            padding: 10px;
+            font-size: 10px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+            }
+
+            .fa:hover {
+                opacity: 0.7;
+                background:black;
+            }
+
+            .fa-facebook, .fa-linkedin, .fa-instagram {
+            background: grey;
+            color: white;
+            }
+
+            .footer {
+                bottom: 0px;
+                background-color: #333;
+                opacity: 75%;
+                padding: 10px;
+                position: absolute;
+                text-align: center;
+                color: white;
+                width: 100%;
+            }
+
+
+            header {
+                background: url('/Users/julieannreambonanza/Documents/HTML_CSS/Assignment2/Sea.jpeg') center;
+                background-size: 100% 100%, cover;
+                padding: 4rem 2rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                align-items: center;
+                top: 0px;
+                height: 30%;
+                padding: 15px;
+                position: absolute;
+            }
+
+
+            header:hover {
+                background: url('/Users/julieannreambonanza/Documents/HTML_CSS/Assignment2/SOS.jpg') no-repeat center;
+                opacity: 0.6;
+                transition: 2s;
+                background-size: 100% 100%, cover;
+            }
+
+            .textHeader{
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: red;
+                text-align: center;
+                position: relative;
+            }
+
+
+            @media only screen and (max-width: 300px)   {
+                h1, h3, .textHeader {
+                font-size: 16px;
+                font-weight: bold;
+                }
+            }
+
+            html, body{
+                height:100%;
+                background-color: #eee;
+            }
+
+            header, footer {
+                width:100%;       
+                z-index: 1;     
+            }
+
+            section {
+                width: 100%;
+                top: 20%;
+                bottom: 10%;
+                overflow: auto;
+                position: absolute;
+            }
+
+            .containerSection {
+                height:100%;
+                z-index: 0;
+                margin-top: 90px;
+            }
+
+
+            .borderSection {
+                padding: 10px;
+                margin: 10px;
+                border-radius: 6%;
+                border: 1.5px solid gray;
+                height: 100%;
+                
+            }
+
+            #RegForm {
+                background-color: #ccc;
+            }
+
+            #aboutUs{
+                background-color: rgb(176, 175, 175);
+            }
+
+            input, select, header, footer {
+                width: auto;
+            }
+
+            #content{
+            background-color: #e4e7e8; 
+            }
+
+            .content{
+            font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: #003f60;
+                padding: 25px;
+            }
+
+            .col-sm-12{
+                flex: 0 0 94%;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <header class="container-fluid">
+                <div class="row">
+                    <section class="textHeader">
+                        <p>Help Save Our Ocean</p>
+                    </section>
+                </div>
+        </header>
+
+        <section>
+            <div class="container containerSection">
+                
+                <div class="row">
+                    <div class="content">
+                            <h2>We need your help to support our work in Educating people around the globe. Help us create a wave of change to build a healthier and more just planet for all.
+                                A great way to get involved in protecting #oceans is to join hands with us. Fill out the registration form below and be a volunteer now! 
+                                After signing up, we will get right back to you to confirm your membership.</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class=" borderSection col-sm-2" id="aboutUs">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3>About Us</h3>
+                                <p>We are a non-government organization that helps sweep our ocean underneath. 
+                                    You can also send your donation, please reach out to our socials for more information on how to send your donation.
+                                    Your gift will play an invaluable role in the future of the ocean and have a positive effect on all who care about a healthy ocean, its marine life, and all of us who depend upon the ocean to survive and thrive. 
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="borderSection col-sm-9" id="RegForm">
+                        <div id="headerForm"><h3>Volunteer Registration Form</h3></div>
+
+                        <div class="container mt-5">
+                            <form id="registrationForm" class="needs-validation" novalidate>
+                                
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="name">First Name:</label>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="First Name" maxlength="39" required>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="name">Last Name:</label>
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Last Name" maxlength="39" required>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="city">Street:</label>
+                                            <input type="text" class="form-control" id="street" name="street" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="city">City:</label>
+                                            <input type="text" class="form-control" id="city" name="city" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="province">Province:</label>
+                                            <select class="form-control" id="province" required>
+                                                <option selected disabled value="">Choose...</option>
+                                                <option value="option1">Alberta</option>
+                                                <option value="option2">British Columbia</option>
+                                                <option value="option3">Manitoba</option>
+                                                <option value="option4">New Brunswick</option>
+                                                <option value="option5">Newfounland and Labrador</option>
+                                                <option value="option6">Northwest Territories</option>
+                                                <option value="option7">Nova Scotia</option>
+                                                <option value="option8">Nunavut</option>
+                                                <option value="option9">Ontario</option>
+                                                <option value="option10">Prince Edward Island</option>
+                                                <option value="option11">Quebec</option>
+                                                <option value="option12">Saskatchewan</option>
+                                                <option value="option13">Yukon</option>
+                    
+                                            </select>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                <div class="form-group">
+                                    <label for="email">Postal Code:</label>
+                                    <input type="text" class="form-control" id="postal" name="postal" pattern="^[A-Za-z]\d[A-Za-z][ ]\d[A-Za-z]\d$" placeholder="A1A 1A1" required>
+                                    <div class="invalid-feedback">
+                                        Invalid postal code. Please match in this format A1A 1A1.
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+                            
+                                <div class="form-group">
+                                    <label for="email">Email Address:</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="username@example.domain" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                                    <div class="invalid-feedback">
+                                        Invalid email address. Please match in this format username@example.domain.
+                                    </div>
+                                </div>
+    
+                                <div class="form-group">
+                                    <label for="password">Password:</label>
+                                    <input type="password" class="form-control" id="password" name="password" minlength="8" required>
+                                    <div class="invalid-feedback">
+                                        Password must be at least 8 char long.
+                                    </div>
+                                </div>
+                    
+                                <div class="form-check" >
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                    <label class="form-check-label" for="invalidCheck">
+                                        Agree to <a href="#">Terms and conditions</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must agree before submitting.
+                                    </div>
+                                </div>
+                    
+                                <br>
+
+                                <button type="submit" class="btn btn-primary">Sign up</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+                
+            </div>
+        </section>  
+
+        <footer class="footer">
+            <a href="https://www.linkedin.com/in/juandereamz" class="fa fa-linkedin" target="_blank"></a>
+            <a href="https://www.facebook.com/eiluj.dee17" class="fa fa-facebook" target="_blank"></a>
+            <a href="https://www.instagram.com/juandereamz/" class="fa fa-instagram" target="_blank"></a>
+            <div>&copy; 2023 | JA_Reambonanza </div>
+        </footer>
+
+    </body>
+
+</html>
