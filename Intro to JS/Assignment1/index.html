@@ -4,24 +4,47 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Assignment1</title>
-    </head>
-    <style>
-        img{
-            width: 30%;
-        }
-        body{
-            text-align: center;
-        }
-    </style>
-    <body>
-        My name is <h1 id="myName"></h1>
-        <br />
-        <img id="myImage" src="" />
-
         <script>
-            document.getElementById('myName').innerHTML="Julie Ann Reambonanza";
-            document.getElementById('myImage').src='https://github.com/JReambonanza/Assignments/blob/main/Intro%20to%20JS/Assignment1/Fall.JPG?raw=true';
+            function displayName(){
+                let fullname = document.getElementById('myName')
+                fullname.innerHTML = "Julie Ann Reambonanza";
+
+                /*just extra - hide button after display*/
+                document.getElementById('nameButton').style.display = 'none';
+            }
+            
+            function displayImage(){
+                let image = document.getElementById('myImage')
+                image.src = 'https://github.com/JReambonanza/Assignments/blob/main/Intro%20to%20JS/Assignment1/Fall.JPG?raw=true';;
+                
+                /*just extra - hide button after display*/
+                document.getElementById('imageButton').style.display = 'none';
+            }
+
         </script>
-    
+
+        <style>
+            img{
+                width: 40%;
+            }
+            body{
+                text-align: center;
+                margin-top: 100px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--FULLNAME-->
+        
+        My name is <h1 id="myName"></h1>
+        <button id="nameButton" onclick="displayName()">Click here to display full name</button>
+        <br /><br />
+
+        <!--IMAGE-->
+        <button id="imageButton" onclick="displayImage()">Click here to display image</button>
+        <br />
+        <img id="myImage" />
+        
     </body>
 </html>
